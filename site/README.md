@@ -4,7 +4,7 @@ A plain static website: HTML, CSS and a little JavaScript. No WordPress, databas
 You can host it anywhere and edit it with any text editor.
 
 ## Preview locally
-Double-click `index.html`, or for a more realistic preview run one of these in this folder:
+Double-click `index.html` in the project root (the folder above `site/`), or for a more realistic preview run one of these from the project root:
 
 ```
 python -m http.server 8000      # then open http://localhost:8000
@@ -12,20 +12,20 @@ npx serve .
 ```
 
 ## Hosting (pick one)
-Each of these hosts the whole `site` folder:
+The website is `index.html` (project root) plus the `site/` folder. Always upload both together, keeping the same layout:
 
 | Host | How |
 |---|---|
-| **Netlify** (free) | Drag & drop the `site` folder onto https://app.netlify.com/drop |
-| **Cloudflare Pages** (free) | Create a project and upload the `site` folder (or connect a Git repo with `site` as the output dir) |
-| **GitHub Pages** (free) | Push to a repo and enable Pages for the folder |
-| **Any web host / cPanel** | Upload the contents of `site/` into `public_html` via FTP or File Manager |
+| **Netlify** (free) | Put `index.html` and `site/` in one folder and drag it onto https://app.netlify.com/drop |
+| **Cloudflare Pages** (free) | Upload a folder containing `index.html` + `site/` (or connect the Git repo with the project root as the output dir) |
+| **GitHub Pages** (free) | Push to the repo; `.github/workflows/deploy-pages.yml` publishes `index.html` + `site/` automatically |
+| **Any web host / cPanel** | Upload `index.html` and the `site/` folder into `public_html` via FTP or File Manager |
 
 Then point your domain's DNS at the host.
 
 ## Files
 ```
-index.html      Home
+../index.html   Home (lives in the project root, links into site/)
 about.html      About + team (bios are the <dialog> blocks at the bottom)
 services.html   Services
 contact.html    Contact details, map, contact form

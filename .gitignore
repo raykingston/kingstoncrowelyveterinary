@@ -1,0 +1,8 @@
+# Old WordPress.com backup: large, and contains logged-in admin/session data. Keep it local only.
+Old Website/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

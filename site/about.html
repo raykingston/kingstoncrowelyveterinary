@@ -36,7 +36,7 @@
 
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="index.html" aria-label="Kingston Crowley Veterinary – home">
+      <a class="brand" href="../index.html" aria-label="Kingston Crowley Veterinary – home">
         <img src="assets/img/logo-wordmark.jpg" alt="Kingston Crowley Veterinary" width="790" height="201">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -44,7 +44,7 @@
       </button>
       <nav class="nav" id="site-nav" aria-label="Main">
         <ul class="nav__list">
-          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="../index.html">Home</a></li>
           <li><a class="nav__link" href="about.html" aria-current="page">About & Team</a></li>
           <li><a class="nav__link" href="services.html">Services</a></li>
           <li><a class="nav__link" href="contact.html">Contact</a></li>
@@ -108,8 +108,18 @@
             </span>
           </button>
 
-          <button class="team-card reveal" data-delay="2" type="button" data-bio="bio-pauline-fitzgerald" aria-haspopup="dialog">
-            <span class="team-card__photo"><img src="assets/img/team-pauline-fitzgerald.jpg" alt="Pauline Fitzgerald" width="1200" height="742" loading="lazy" style="object-position:35% 50%"></span>
+          <!-- TODO: Pernille's full biography is in progress. Convert to a <button data-bio="bio-pernille"> with a dialog when it's supplied. -->
+          <div class="team-card reveal" data-delay="2">
+            <span class="team-card__photo"><img src="assets/img/team-pernille.jpg" alt="Pernille Johanson" width="1200" height="742" loading="lazy" style="object-position:35% 50%"></span>
+            <span class="team-card__body">
+              <span class="team-card__name">Pernille Johanson</span>
+              <span class="team-card__role">Veterinary Surgeon</span>
+              <span class="tags"><span class="tag">Bio coming soon</span></span>
+            </span>
+          </div>
+
+          <button class="team-card reveal" data-delay="3" type="button" data-bio="bio-pauline-fitzgerald" aria-haspopup="dialog">
+            <span class="team-card__photo"><img src="assets/img/team-pauline-fitzgerald.jpg" alt="Pauline Fitzgerald" width="900" height="1192" loading="lazy" style="object-position:50% 40%"></span>
             <span class="team-card__body">
               <span class="team-card__name">Pauline Fitzgerald</span>
               <span class="team-card__role">Veterinary Nurse</span>
@@ -118,7 +128,7 @@
             </span>
           </button>
 
-          <button class="team-card reveal" data-delay="3" type="button" data-bio="bio-deirdre" aria-haspopup="dialog">
+          <button class="team-card reveal" data-delay="4" type="button" data-bio="bio-deirdre" aria-haspopup="dialog">
             <span class="team-card__photo"><img src="assets/img/team-deirdre.jpg" alt="Deirdre Cremin" width="900" height="1297" loading="lazy" style="object-position:50% 40%"></span>
             <span class="team-card__body">
               <span class="team-card__name">Deirdre Cremin</span>
@@ -128,15 +138,6 @@
             </span>
           </button>
 
-          <!-- TODO: Pauline's biography & surname not yet supplied. Convert to a <button data-bio="bio-pauline"> with a dialog when available. -->
-          <div class="team-card reveal" data-delay="4">
-            <span class="team-card__photo"><img src="assets/img/team-pauline.jpg" alt="Pauline" width="900" height="1192" loading="lazy" style="object-position:50% 40%"></span>
-            <span class="team-card__body">
-              <span class="team-card__name">Pauline</span>
-              <span class="team-card__role">Reception &amp; Veterinary Support</span>
-              <span class="tags"><span class="tag">Client care</span></span>
-            </span>
-          </div>
         </div>
       </div>
     </section>
@@ -151,7 +152,7 @@
         <div class="gallery reveal">
           <figure><img src="assets/img/building.jpg" alt="Kingston Crowley Veterinary on Beecher Street" loading="lazy"><figcaption>15 Beecher Street</figcaption></figure>
           <figure><img src="assets/img/ger-with-dog.jpg" alt="Ger examining a dog" loading="lazy"><figcaption>Consultations</figcaption></figure>
-          <figure><img src="assets/img/team-pauline-fitzgerald.jpg" alt="Pauline caring for a cat" loading="lazy" style="object-position:35% 50%"><figcaption>Nursing care</figcaption></figure>
+          <figure><img src="assets/img/team-pernille.jpg" alt="Pernille caring for a cat" loading="lazy" style="object-position:35% 50%"><figcaption>Small animal care</figcaption></figure>
           <figure><img src="assets/img/deirdre-reception.jpg" alt="Deirdre at the reception desk" loading="lazy"><figcaption>Reception</figcaption></figure>
           <figure><img src="assets/img/team-kenneth.jpg" alt="Kenneth outside the practice" loading="lazy" style="object-position:50% 25%"><figcaption>Our vets</figcaption></figure>
         </div>
@@ -210,7 +211,7 @@
     <dialog class="bio-dialog" id="bio-pauline-fitzgerald" aria-labelledby="bio-pf-title">
       <div class="bio">
         <button class="bio__close" type="button" data-close aria-label="Close biography"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
-        <div class="bio__media"><img src="assets/img/team-pauline-fitzgerald.jpg" alt="Pauline Fitzgerald caring for a cat" loading="lazy" style="object-position:30% 50%"></div>
+        <div class="bio__media"><img src="assets/img/team-pauline-fitzgerald.jpg" alt="Pauline Fitzgerald" loading="lazy" style="object-position:50% 30%"></div>
         <div class="bio__content" tabindex="0">
           <p class="team-card__role">Veterinary Nurse</p>
           <h2 id="bio-pf-title">Pauline Fitzgerald</h2>
@@ -252,7 +253,7 @@
         <div>
           <h3>Explore</h3>
           <ul class="footer-list">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About &amp; Team</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="book.html">Book an appointment</a></li>

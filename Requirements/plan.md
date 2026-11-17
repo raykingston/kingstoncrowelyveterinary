@@ -71,9 +71,9 @@ The new site lives in [`/site`](../site). Upload the contents of that folder to 
 |---|---|---|---|
 | **Gerard (Ger) Kingston** | Veterinary Surgeon | Portrait, Ger examining a dog | Qualified 1991, 35+ years in Mallow, mixed practice, small & large animals |
 | **Kenneth Crowley** | Veterinary Surgeon \| Practice Director | Portrait | Mixed practice, farm animal medicine, herd health & productivity, companion animals (especially dogs & cats). *Bio updated at Kenneth's request; see below* |
-| **Pauline Fitzgerald** | Veterinary Nurse | Nursing photo with a cat | UCD-qualified (2005), in the sector since 1997, equine & mixed practice, surgery and recovery care, fosters rescue animals |
+| **Pauline Fitzgerald** | Veterinary Nurse | Portrait in front of the practice sign | UCD-qualified (2005), in the sector since 1997, equine & mixed practice, surgery and recovery care, fosters rescue animals |
 | **Deirdre Cremin** | Reception & Veterinary Support | Portrait, at reception | Animal Care & Animal Science (St. John's Central College), farm background, TB testing support, pony racing |
-| **Pauline** (folder "Pauline B") | Reception & Veterinary Support *(assumed)* | Portrait | **No biography supplied** |
+| **Pernille Johanson** | Veterinary Surgeon | Photo with a cat on the exam table (`team-pernille.jpg`) | Biography in progress; card shows "Bio coming soon" |
 
 Each team member gets a card with a photo, name, role and skill tags. Clicking "Read bio" opens the full biography in a pop-up.
 
@@ -91,19 +91,15 @@ That childhood ambition developed into a lifelong passion for veterinary medicin
 As a director of Kingston Crowley Veterinary, Kenneth enjoys the variety that mixed veterinary practice brings, from working closely with farmers to improve herd health and productivity to caring for much-loved family pets. He takes great pride in the relationships he has built with clients over the years and is committed to providing practical, professional and compassionate veterinary care.
 
 ### ❓ Questions for you about the team
-1. **Pauline B** has a photo but no biography. `Biographies.txt` has an empty "Reception & Veterinary Support" heading, so I've assumed that's her role.
-   For now her card shows only name and role. Send a bio and surname when you have them.
-2. **Please check the two Pauline photos.** The bio says Pauline Fitzgerald has worked in the sector since 1997.
-   Make sure the photo in the `Pauline Fitzgerald` folder (nurse with a cat) and the one in `Pauline B` (in front of the sign) haven't been swapped.
-   If they have, swap the two `src` paths in `site/about.html`.
+1. **Pernille Johanson** (Veterinary Surgeon): her biography is still in progress. Her card isn't clickable yet. Send the bio when it's ready and I'll add a pop-up like the others.
 
 ---
 
 ## 3. Site structure
 
 ```
+index.html            Home (project root; links into site/)
 site/
-├── index.html        Home
 ├── about.html        About us + full team & biographies
 ├── services.html     Companion animal, farm animal, emergency services
 ├── contact.html      Address, hours, map, contact form
@@ -155,7 +151,7 @@ site/
 
 | Item | Status | What to do |
 |---|---|---|
-| Hosting | Ready | Upload `/site` to any static host. See `site/README.md` |
+| Hosting | Ready | Upload `index.html` + `/site` (same layout) to any static host. See `site/README.md` |
 | Contact form | **Needs setup** | Static hosts can't send email on their own. The form is wired for [Formspree](https://formspree.io) (free tier): create a form and replace `YOUR_FORM_ID` in `contact.html` and `index.html`. Until then the form shows a "please call us" message. On Netlify, add `data-netlify="true"` instead |
 | Email address | **Unknown** | No practice email in the backup. Add one to the footer and contact page if you want |
 | Eircode | **Unknown** | Add it to the address if you want |
@@ -190,3 +186,6 @@ site/
 | 2026-11-17 | **Book page: the "how it works" steps were unnecessary.** | Removed the 3-step section from `site/book.html`. The page now opens straight onto the 4 booking cards (white), followed by the Emergencies / Farm visits / Drop-in cards (cream). The hidden "Book an appointment" heading is kept. *(Replaces the cream steps band from the previous entry.)* | ✅ Done |
 | 2026-11-17 | **Book page: swap the section backgrounds.** | In `site/book.html` the 4 booking cards now sit on cream and the Emergencies / Farm visits / Drop-in cards sit on white. | ✅ Done |
 | 2026-11-17 | **Footer address wrapped unevenly** ("Lackanalooha" fell back under the pin icon). | Footer address on all pages now wraps as one aligned block beside the pin icon. | ✅ Done |
+| 2026-11-17 | **Pauline B was actually Pernille Johanson, Veterinary Surgeon** | Photos were also swapped: the cat photo is Pernille, the sign portrait is Pauline Fitzgerald. Swapped the images, set role to Veterinary Surgeon, moved next to the other vets on Home and About; "Bio coming soon" until her biography is supplied | ✅ Done |
+| 2026-11-17 | **Move the Home page to the project root.** | `index.html` now lives in the project root and references `site/` for all other pages, CSS, JS and images (including social preview image and Google business data). The other pages link home via `../index.html`. The GitHub Pages workflow now publishes only `index.html` + `site/` (never `Requirements/`), and `site/README.md` explains uploading both together. | ✅ Done |
+| 2026-11-17 | **Contact page intro banner ("We're here to help") added no value; toggle the backgrounds below.** | Removed the banner from `site/contact.html` (kept a hidden "Contact us" `<h1>` for screen readers and Google). The emergency strip + contact details/form section now sits on cream and the map section ("15 Beecher Street, Mallow") on white. | ✅ Done |

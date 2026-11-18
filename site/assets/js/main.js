@@ -30,6 +30,9 @@
     mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
     arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
     check: '<polyline points="20 6 9 17 4 12"/>',
+    pill: '<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>',
+    repeat: '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+    bone: '<path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/>',
     menu: '<line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>',
     close: '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
     door: '<path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.56v16.16a.5.5 0 0 1-.6.49L5 20V5.56a1 1 0 0 1 .76-.97l6-1.5a1 1 0 0 1 1.24.97Z"/>',
@@ -71,8 +74,7 @@
 
   /* ---------------- Opening hours: highlight today + open/closed ---------------- */
   // Times are in Irish time. [open, close] in minutes after midnight; day 0 = Sunday.
-  var HOURS = { 1: [600, 1050], 2: [600, 1050], 3: [600, 1050], 4: [600, 1050], 5: [600, 1050], 6: [600, 780] };
-  var DROP_IN = { 1: [1080, 1140], 2: [1080, 1140], 3: [1080, 1140], 4: [1080, 1140] };
+  var HOURS = { 1: [540, 1080], 2: [540, 1080], 3: [540, 1080], 4: [540, 1080], 5: [540, 1080], 6: [540, 780] };
   function irishNow() {
     try {
       var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Dublin', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
@@ -87,9 +89,8 @@
     if (tr.getAttribute('data-days').split(',').indexOf(String(now.day)) > -1) tr.classList.add('is-today');
   });
   document.querySelectorAll('[data-open-status]').forEach(function (el) {
-    var h = HOURS[now.day], d = DROP_IN[now.day];
+    var h = HOURS[now.day];
     if (h && now.mins >= h[0] && now.mins < h[1]) { el.textContent = 'Open now · until ' + fmt(h[1]); el.classList.add('is-open'); }
-    else if (d && now.mins >= d[0] && now.mins < d[1]) { el.textContent = 'Drop-in clinic open · until ' + fmt(d[1]); el.classList.add('is-open'); }
     else { el.textContent = 'Closed now · emergencies 24/7 on 022 21258'; el.classList.add('is-closed'); }
   });
 
@@ -118,38 +119,73 @@
     }, 250);
   }
 
-  /* ---------------- Contact form (Formspree or any JSON form endpoint) ---------------- */
+  /* ---------------- Forms: contact + appointment request ----------------
+     Sends the form as JSON to the URL in its action attribute. Works with FormSubmit
+     (https://formsubmit.co/ajax/<email>) and Formspree (https://formspree.io/f/<id>).
+     Optional attributes on the <form>:
+       data-subject  email subject; {field_name} is replaced with that field's value
+       data-success  message shown after a successful send                       */
   document.querySelectorAll('form[data-contact-form]').forEach(function (form) {
     var status = form.querySelector('.form__status');
     var show = function (type, msg) { status.className = 'form__status is-visible is-' + type; status.textContent = msg; };
+    var defaultSuccess = 'Thank you! Your message has been sent. We will get back to you as soon as we can.';
+
+    // Appointment request: pre-select a service from ?service=... and tailor the description prompt.
+    var details = form.querySelector('textarea');
+    var basePlaceholder = details ? details.placeholder : '';
+    var services = form.querySelectorAll('input[name="service"]');
+    var updatePlaceholder = function () {
+      var picked = form.querySelector('input[name="service"]:checked');
+      if (picked && details && picked.getAttribute('data-placeholder')) details.placeholder = picked.getAttribute('data-placeholder');
+    };
+    services.forEach(function (r) { r.addEventListener('change', updatePlaceholder); });
+    var wanted = (new URLSearchParams(location.search).get('service') || '').toLowerCase();
+    if (wanted) {
+      services.forEach(function (r) { if (r.id === 's-' + wanted) r.checked = true; });
+      updatePlaceholder();
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (form.querySelector('.hp input') && form.querySelector('.hp input').value) return; // spam honeypot
+      var honey = form.querySelector('.hp input');
+      if (honey && honey.value) return; // spam honeypot
       var action = form.getAttribute('action') || '';
       if (!action || action.indexOf('YOUR_FORM_ID') > -1) {
         show('info', 'Online messages are not switched on yet. Please call us on 022 21258 and we will be happy to help.');
         return;
       }
+
+      // Collect fields; ticked checkboxes sharing a name are joined into one line.
+      var data = {};
+      new FormData(form).forEach(function (value, key) {
+        if (key === '_honey' || key === '_gotcha') return;
+        data[key] = data[key] ? data[key] + ', ' + value : value;
+      });
+      var subject = form.getAttribute('data-subject');
+      if (subject) {
+        data._subject = subject.replace(/\{(\w+)\}/g, function (m, k) { return data[k] || ''; });
+      }
+      if (/formsubmit\.co/.test(action)) { data._template = 'table'; data._captcha = 'false'; }
+
       var btn = form.querySelector('[type="submit"]');
       btn.disabled = true; btn.dataset.label = btn.innerHTML; btn.textContent = 'Sending…';
-      fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function (r) {
-          if (!r.ok) throw new Error('bad');
-          form.reset(); show('success', 'Thank you! Your message has been sent. We will get back to you as soon as we can.');
+      fetch(action, { method: 'POST', body: JSON.stringify(data), headers: { 'Content-Type': 'application/json', Accept: 'application/json' } })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, body: j }; }); })
+        .then(function (res) {
+          if (!res.ok || res.body.success === false || res.body.success === 'false') {
+            // e.g. FormSubmit's "This form needs Activation..." message; visible in the browser console (F12).
+            throw new Error(res.body.message || ('HTTP error'));
+          }
+          form.reset();
+          if (details) details.placeholder = basePlaceholder;
+          show('success', form.getAttribute('data-success') || defaultSuccess);
+          status.scrollIntoView({ block: 'center', behavior: 'smooth' });
         })
-        .catch(function () { show('error', 'Sorry, something went wrong sending your message. Please call us on 022 21258.'); })
+        .catch(function (err) {
+          if (window.console) console.warn('Form not sent:', err && err.message, location.protocol === 'file:' ? '(forms only work on the live website, not a file opened from disk)' : '');
+          show('error', 'Sorry, something went wrong sending your message. Please call us on 022 21258.');
+        })
         .then(function () { btn.disabled = false; btn.innerHTML = btn.dataset.label; });
-    });
-  });
-
-  /* ---------------- Calendly booking pop-ups ---------------- */
-  document.querySelectorAll('[data-calendly]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      var url = btn.getAttribute('data-calendly');
-      if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-        e.preventDefault();
-        window.Calendly.initPopupWidget({ url: url });
-      } // otherwise the link's href opens Calendly in a new tab
     });
   });
 

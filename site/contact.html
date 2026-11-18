@@ -35,8 +35,8 @@
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 52.1415852, "longitude": -8.6510727 },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "17:30" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "13:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
     ],
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3" }
   }
@@ -49,7 +49,7 @@
     <div class="container">
       <div class="topbar__group">
         <span class="topbar__item"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>15 Beecher St, Mallow, Co. Cork</span>
-        <span class="topbar__item topbar__hide-sm"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Mon–Fri 10am–5.30pm · Sat 10am–1pm</span>
+        <span class="topbar__item topbar__hide-sm"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Mon–Fri 9am–6pm · Sat 9am–1pm</span>
       </div>
       <div class="topbar__group">
         <span class="topbar__item topbar__emergency"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg><span class="topbar__hide-sm">24/7 emergencies:</span> <a href="tel:+3532221258">022 21258</a></span>
@@ -74,7 +74,7 @@
         </ul>
         <div class="nav__cta">
           <a class="btn btn--ghost btn--sm" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
-          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book online</a>
+          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
         </div>
       </nav>
     </div>
@@ -117,9 +117,8 @@
               <div style="flex:1">
                 <h3>Opening hours</h3>
                 <table class="hours">
-                  <tr data-days="1,2,3,4,5"><th scope="row">Monday – Friday</th><td>10am – 5.30pm</td></tr>
-                  <tr data-days="6"><th scope="row">Saturday</th><td>10am – 1pm</td></tr>
-                  <tr><th scope="row">Small animal drop-in</th><td>Mon – Thu, 6 – 7pm<br>or by appointment</td></tr>
+                  <tr data-days="1,2,3,4,5"><th scope="row">Monday – Friday</th><td>9am – 6pm</td></tr>
+                  <tr data-days="6"><th scope="row">Saturday</th><td>9am – 1pm</td></tr>
                   <tr class="is-emergency" data-days="0"><th scope="row">Out of hours</th><td>24/7 for emergencies only</td></tr>
                 </table>
               </div>
@@ -128,10 +127,11 @@
 
           <div class="info-card reveal" data-delay="1">
             <h2 style="font-size:clamp(1.6rem,2.6vw,2rem)">Send us a message</h2>
-            <p class="muted">For general enquiries, use this form to reach us by email and we'll get back to you as soon as we can.</p>
-            <!-- Contact form: create a free form at https://formspree.io and replace YOUR_FORM_ID below.
-                 (On Netlify you can instead add data-netlify="true" and remove the action.) -->
-            <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-contact-form>
+            <p class="muted">For general enquiries, use this form to reach us by email and we'll get back to you as soon as we can. To arrange an appointment, call us or <a href="book.html">send an appointment request</a>.</p>
+            <!-- Messages are emailed via FormSubmit (https://formsubmit.co). To send them to a different inbox,
+                 change the email address at the end of the action URL below (see site/README.md). -->
+            <form class="form" action="https://formsubmit.co/ajax/raykingston@hotmail.com" method="POST" data-contact-form
+                  data-subject="Website enquiry: {topic} from {name}">
               <div class="form__row">
                 <div class="field">
                   <label for="c-name">Name</label>
@@ -153,6 +153,7 @@
                     <option>General enquiry</option>
                     <option>Pet / small animal</option>
                     <option>Farm / large animal</option>
+                    <option>Pharmacy, diets &amp; pet food</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -161,7 +162,7 @@
                 <label for="c-message">Message</label>
                 <textarea id="c-message" name="message" required></textarea>
               </div>
-              <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+              <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
               <div class="form__status" role="status" aria-live="polite"></div>
               <div><button class="btn btn--lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>Send message</button></div>
               <p class="form__note">Please don't use this form for emergencies. Call 022 21258 instead.</p>
@@ -193,17 +194,13 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/img/logo-emblem.jpg" alt="Kingston Crowley Veterinary" width="600" height="359" loading="lazy">
-          <p>A mixed veterinary practice in the heart of Mallow, caring for family pets and farm animals with over 35 years of local experience.</p>
-        </div>
         <div>
           <h3>Explore</h3>
           <ul class="footer-list">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About &amp; Team</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="book.html">Book an appointment</a></li>
+            <li><a href="book.html">Request an appointment</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -218,10 +215,9 @@
         <div>
           <h3>Opening hours</h3>
           <dl class="footer-hours">
-            <dt>Mon – Fri</dt><dd>10am – 5.30pm</dd>
-            <dt>Saturday</dt><dd>10am – 1pm</dd>
+            <dt>Mon – Fri</dt><dd>9am – 6pm</dd>
+            <dt>Saturday</dt><dd>9am – 1pm</dd>
             <dt>Sunday</dt><dd>Emergencies only</dd>
-            <dt>Drop-in</dt><dd>Mon – Thu, 6 – 7pm<br><small>small animal clinic</small></dd>
           </dl>
         </div>
       </div>
@@ -234,7 +230,7 @@
 
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn btn--navy" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>Call us</a>
-    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book online</a>
+    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
   </div>
 </body>
 </html>

@@ -29,7 +29,7 @@ Then point your domain's DNS at the host.
 about.html      About + team (bios are the <dialog> blocks at the bottom)
 services.html   Services
 contact.html    Contact details, map, contact form
-book.html       Calendly booking buttons
+book.html       Appointment request form (emails the practice; staff phone back)
 assets/css/styles.css   All styling (brand colours are at the top in :root)
 assets/js/main.js       Menu, animations, bio pop-ups, open/closed status, form, icons
 assets/img/             Logos, photos, favicon
@@ -39,17 +39,28 @@ assets/img/             Logos, photos, favicon
 - **Phone, address or hours:** these appear in the header, footer and contact sections of every page, so search and replace across all 5 HTML files.
   The live "Open now / Closed" badge reads its times from `HOURS` in `assets/js/main.js`.
 - **Team member:** copy an existing `team-card` button and its matching `<dialog id="bio-…">` in `about.html`, and add the photo to `assets/img/`.
-- **Booking links:** change the four Calendly URLs in `book.html`. Each URL appears twice per button: `href` and `data-calendly`.
+- **Appointments:** the practice books by phone only (022 21258). `book.html` is a request form that emails the practice so staff can call the owner back. Services pages can pre-select a service with `book.html?service=consult` (also `vacc`, `surgery`, `postop`, `repeat`, `food`, `other`).
 - **Contact form:** see below.
 
-## Contact form setup (required for messages to arrive)
-A static site can't send email by itself. The form is ready for **Formspree** (free tier):
-1. Sign up at https://formspree.io and create a form using the practice email.
-2. Copy the form ID (e.g. `xyzabcd`) and replace `YOUR_FORM_ID` in `contact.html`.
+## Where form emails go (contact + appointment request)
+A static site can't send email by itself, so both forms use **FormSubmit** (free, no account needed).
+The destination address is at the end of each form's `action` URL:
 
-Until you do this, submitting the form shows a friendly "please call us" message.
-*On Netlify you can use Netlify Forms instead: add `data-netlify="true"` and `name="contact"` to the `<form>` and remove the `action`.*
+```
+contact.html  ->  action="https://formsubmit.co/ajax/raykingston@hotmail.com"
+book.html     ->  action="https://formsubmit.co/ajax/raykingston@hotmail.com"
+```
+
+1. **Activate once:** the first time a form is submitted from the live site, FormSubmit emails that address an
+   "Activate Form" link. Click it; until then submissions show an error asking people to phone.
+   Check the junk folder if it doesn't arrive.
+2. **Hide the address (recommended):** after activating, FormSubmit sends a random alias string. Replace the email
+   in both `action` URLs with that string so the address isn't visible in the page source.
+3. **Change the inbox later** (e.g. to the practice email): put the new address in both `action` URLs, push, and activate again.
+
+Emails arrive as a table with a subject like "Appointment request: Vaccination for Bella"; replying goes straight to the owner.
+*Formspree also works: use `https://formspree.io/f/<id>` as the action instead.*
 
 ## Outstanding content
-- Biography (and surname) for **Pauline** (Reception & Veterinary Support). See the TODO comment in `about.html`.
-- Practice email address and Eircode (optional).
+- Practice email address for the forms (currently a personal address), and Eircode (optional).
+- Online booking may move to the Petstoria booking system in future.

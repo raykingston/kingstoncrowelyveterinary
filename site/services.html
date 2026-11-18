@@ -26,7 +26,7 @@
     <div class="container">
       <div class="topbar__group">
         <span class="topbar__item"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>15 Beecher St, Mallow, Co. Cork</span>
-        <span class="topbar__item topbar__hide-sm"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Mon–Fri 10am–5.30pm · Sat 10am–1pm</span>
+        <span class="topbar__item topbar__hide-sm"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Mon–Fri 9am–6pm · Sat 9am–1pm</span>
       </div>
       <div class="topbar__group">
         <span class="topbar__item topbar__emergency"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg><span class="topbar__hide-sm">24/7 emergencies:</span> <a href="tel:+3532221258">022 21258</a></span>
@@ -51,7 +51,7 @@
         </ul>
         <div class="nav__cta">
           <a class="btn btn--ghost btn--sm" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
-          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book online</a>
+          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
         </div>
       </nav>
     </div>
@@ -69,6 +69,7 @@
         <div class="btn-row" style="margin-top:28px">
           <a class="btn" href="#companion"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>Companion animals</a>
           <a class="btn btn--navy" href="#farm"><svg class="icon" aria-hidden="true"><use href="#i-milk"></use></svg>Farm animals</a>
+          <a class="btn btn--ghost" href="#pharmacy"><svg class="icon" aria-hidden="true"><use href="#i-pill"></use></svg>Pharmacy &amp; pet food</a>
           <a class="btn btn--ghost" href="#emergency"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>Emergencies</a>
         </div>
       </div>
@@ -84,7 +85,7 @@
             <p class="lead">Dogs, cats and other small animals get the same patient, unhurried approach, from their first puppy or kitten vaccinations right through to their senior years.</p>
             <p>Our vets and veterinary nurse work closely together, so your pet is in experienced hands from the consulting room through surgery and recovery. We'll always explain what we're doing and why, and talk you through your options.</p>
             <div class="btn-row" style="margin-top:24px">
-              <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book a pet appointment</a>
+              <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a pet appointment</a>
             </div>
           </div>
           <div class="split__media reveal" data-delay="1">
@@ -97,25 +98,25 @@
             <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"></use></svg></span>
             <h3>Consultations</h3>
             <p>Health checks, illness and injury assessments, and advice on everything from diet to behaviour. Same-day appointments are often available.</p>
-            <a class="link-arrow" href="book.html">Book a consultation <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="link-arrow" href="book.html?service=consult">Request a consultation <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
           <article class="card reveal" data-delay="1">
             <span class="card__icon card__icon--teal"><svg class="icon" aria-hidden="true"><use href="#i-syringe"></use></svg></span>
             <h3>Vaccinations</h3>
             <p>Primary courses for puppies and kittens and annual boosters to protect your pet against serious infectious diseases.</p>
-            <a class="link-arrow" href="book.html">Book a vaccination <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="link-arrow" href="book.html?service=vacc">Request a vaccination <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
           <article class="card reveal" data-delay="2">
             <span class="card__icon card__icon--navy"><svg class="icon" aria-hidden="true"><use href="#i-scissors"></use></svg></span>
             <h3>Surgery</h3>
             <p>Routine and non-routine operations carried out with careful anaesthetic monitoring and dedicated nursing support.</p>
-            <a class="link-arrow" href="book.html">Book an operation <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="link-arrow" href="book.html?service=surgery">Request an operation <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
           <article class="card reveal">
             <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg></span>
             <h3>Post-operative checks</h3>
             <p>Follow-up visits to check wounds, review pain relief and make sure recovery is going well after surgery.</p>
-            <a class="link-arrow" href="book.html">Book a post-op check <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <a class="link-arrow" href="book.html?service=postop">Request a post-op check <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
           <article class="card reveal" data-delay="1">
             <span class="card__icon card__icon--teal"><svg class="icon" aria-hidden="true"><use href="#i-heartpulse"></use></svg></span>
@@ -124,10 +125,46 @@
             <a class="link-arrow" href="about.html#bio-pauline-fitzgerald">Meet Pauline <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
           <article class="card reveal" data-delay="2">
-            <span class="card__icon card__icon--warm"><svg class="icon" aria-hidden="true"><use href="#i-door"></use></svg></span>
-            <h3>Small animal drop-in clinic</h3>
-            <p>No appointment needed: call in <strong>Monday to Thursday, 6–7pm</strong>, or arrange another time by appointment.</p>
-            <a class="link-arrow" href="contact.html">Opening hours <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            <span class="card__icon card__icon--warm"><svg class="icon" aria-hidden="true"><use href="#i-pill"></use></svg></span>
+            <h3>Pharmacy &amp; nutrition</h3>
+            <p>A well-stocked pharmacy, same-day repeat prescriptions, prescription diets and affordable pet food.</p>
+            <a class="link-arrow" href="#pharmacy">See what we stock <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHARMACY & NUTRITION ============ -->
+    <section class="section section--sand" id="pharmacy">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Pharmacy &amp; nutrition</span>
+          <h2>Medicines, diets and pet food under one roof</h2>
+          <p>Pick up what your animals need while you're with us, whether it's a repeat prescription, a veterinary diet or everyday pet food.</p>
+        </div>
+        <div class="grid grid-2">
+          <article class="card reveal">
+            <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-pill"></use></svg></span>
+            <h3>Well-stocked veterinary pharmacy</h3>
+            <p>A wide range of animal medicines for pets and farm animals, so you can usually leave with what you need on the day.</p>
+          </article>
+          <article class="card reveal" data-delay="1">
+            <span class="card__icon card__icon--teal"><svg class="icon" aria-hidden="true"><use href="#i-repeat"></use></svg></span>
+            <h3>Same-day repeat prescriptions</h3>
+            <p>Repeat prescriptions dispensed the same day, subject to veterinary approval and stock availability.</p>
+            <a class="link-arrow" href="book.html?service=repeat">Request a repeat prescription <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon card__icon--navy"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>
+            <h3>Prescription veterinary diets</h3>
+            <p>Specialist diets for dogs and cats with particular health needs, such as kidney, digestive, weight or skin conditions.</p>
+            <a class="link-arrow" href="book.html?service=food">Order a diet <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </article>
+          <article class="card reveal" data-delay="1">
+            <span class="card__icon card__icon--warm"><svg class="icon" aria-hidden="true"><use href="#i-bone"></use></svg></span>
+            <h3>Affordable pet food</h3>
+            <p>Pet food options to suit different needs and budgets. Ask us and we'll help you choose the right food for your pet.</p>
+            <a class="link-arrow" href="book.html?service=food">Ask about pet food <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
           </article>
         </div>
       </div>
@@ -232,10 +269,10 @@
           <svg class="cta-band__paw cta-band__paw--a" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-paw"></use></svg>
           <svg class="cta-band__paw cta-band__paw--b" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-paw"></use></svg>
           <h2>Not sure what you need?</h2>
-          <p>Give us a call. Our friendly team will point you in the right direction and find an appointment that suits.</p>
+          <p>Give us a call. Our friendly team will point you in the right direction and find an appointment that suits. Or send us a request and we'll call you back.</p>
           <div class="btn-row">
             <a class="btn btn--white btn--lg" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
-            <a class="btn btn--outline-light btn--lg" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book online</a>
+            <a class="btn btn--outline-light btn--lg" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
           </div>
         </div>
       </div>
@@ -246,17 +283,13 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/img/logo-emblem.jpg" alt="Kingston Crowley Veterinary" width="600" height="359" loading="lazy">
-          <p>A mixed veterinary practice in the heart of Mallow, caring for family pets and farm animals with over 35 years of local experience.</p>
-        </div>
         <div>
           <h3>Explore</h3>
           <ul class="footer-list">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About &amp; Team</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="book.html">Book an appointment</a></li>
+            <li><a href="book.html">Request an appointment</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -271,10 +304,9 @@
         <div>
           <h3>Opening hours</h3>
           <dl class="footer-hours">
-            <dt>Mon – Fri</dt><dd>10am – 5.30pm</dd>
-            <dt>Saturday</dt><dd>10am – 1pm</dd>
+            <dt>Mon – Fri</dt><dd>9am – 6pm</dd>
+            <dt>Saturday</dt><dd>9am – 1pm</dd>
             <dt>Sunday</dt><dd>Emergencies only</dd>
-            <dt>Drop-in</dt><dd>Mon – Thu, 6 – 7pm<br><small>small animal clinic</small></dd>
           </dl>
         </div>
       </div>
@@ -287,7 +319,7 @@
 
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn btn--navy" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>Call us</a>
-    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book online</a>
+    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
   </div>
 </body>
 </html>

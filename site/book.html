@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Request an Appointment | Kingston Crowley Veterinary, Mallow</title>
-  <meta name="description" content="Send Kingston Crowley Veterinary in Mallow an appointment request for your pet and we will call you back to arrange a time.">
+  <title>Book an Appointment | Kingston Crowley Veterinary, Mallow</title>
+  <meta name="description" content="Book an appointment for your pet at Kingston Crowley Veterinary in Mallow by calling 022 21258.">
   <meta name="theme-color" content="#14284b">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kingston Crowley Veterinary">
-  <meta property="og:title" content="Request an Appointment | Kingston Crowley Veterinary, Mallow">
-  <meta property="og:description" content="Send Kingston Crowley Veterinary in Mallow an appointment request for your pet and we will call you back to arrange a time.">
+  <meta property="og:title" content="Book an Appointment | Kingston Crowley Veterinary, Mallow">
+  <meta property="og:description" content="Book an appointment for your pet at Kingston Crowley Veterinary in Mallow by calling 022 21258.">
   <meta property="og:image" content="assets/img/hero.jpg">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
@@ -51,7 +51,7 @@
         </ul>
         <div class="nav__cta">
           <a class="btn btn--ghost btn--sm" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
-          <a class="btn btn--sm" href="book.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
+          <a class="btn btn--sm" href="book.html" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book a visit</a>
         </div>
       </nav>
     </div>
@@ -62,10 +62,10 @@
     <section class="page-hero">
       <svg class="page-hero__paw" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-paw"></use></svg>
       <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Request an appointment</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Book an appointment</span></nav>
         <span class="eyebrow">Appointments</span>
-        <h1>Request an appointment</h1>
-        <p class="lead">All appointments are booked by phone on <a href="tel:+3532221258">022 21258</a>. Can't call right now? Tell us what your pet needs below and we'll ring you back to find a time that suits.</p>
+        <h1>Book an appointment</h1>
+        <p class="lead">All appointments are booked by phone. Call us on <a href="tel:+3532221258">022 21258</a> and our team will find a time that suits you and your pet.</p>
       </div>
     </section>
 
@@ -73,124 +73,29 @@
       <div class="container request-layout">
 
         <div class="info-card reveal">
-          <!-- Requests are emailed via FormSubmit (https://formsubmit.co). To send them to a different inbox,
-               change the email address at the end of the action URL below (see site/README.md). -->
-          <form class="form" action="https://formsubmit.co/ajax/raykingston@hotmail.com" method="POST" data-contact-form
-                data-subject="Request appointment - {service} - {first_name} {last_name}"
-                data-success="Thank you! We've received your request and will phone you to arrange a time, usually within one working day.">
-
-            <fieldset class="form-step">
-              <legend><span class="form-step__num" aria-hidden="true">1</span>What do you need?</legend>
-              <div class="choice-grid">
-                <div class="choice"><input type="radio" id="s-consult" name="service" value="Consultation" required data-placeholder="e.g. Bella has been limping on her front left leg since Sunday and isn't eating as well as usual."><label for="s-consult"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"></use></svg>Consultation<small>Illness, injury or check-up</small></label></div>
-                <div class="choice"><input type="radio" id="s-vacc" name="service" value="Vaccination" data-placeholder="e.g. Annual booster for Max, last done in March. Or: first puppy vaccination, 8 weeks old."><label for="s-vacc"><svg class="icon" aria-hidden="true"><use href="#i-syringe"></use></svg>Vaccination<small>Puppy, kitten or booster</small></label></div>
-                <div class="choice"><input type="radio" id="s-surgery" name="service" value="Surgery / neutering" data-placeholder="e.g. Neutering for Luna, 6 months old. Or: a lump removal we discussed at her last visit."><label for="s-surgery"><svg class="icon" aria-hidden="true"><use href="#i-scissors"></use></svg>Surgery<small>Neutering or a planned procedure</small></label></div>
-                <div class="choice"><input type="radio" id="s-postop" name="service" value="Post-op check" data-placeholder="e.g. Stitch check for Charlie, who had his operation last Tuesday."><label for="s-postop"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"></use></svg>Post-op check<small>Follow-up after surgery</small></label></div>
-                <div class="choice"><input type="radio" id="s-repeat" name="service" value="Repeat prescription" data-placeholder="e.g. Repeat of Milo's arthritis medication, 30 days' supply. Collecting Thursday if possible."><label for="s-repeat"><svg class="icon" aria-hidden="true"><use href="#i-pill"></use></svg>Repeat prescription<small>Subject to vet approval</small></label></div>
-                <div class="choice"><input type="radio" id="s-food" name="service" value="Diet / pet food" data-placeholder="e.g. A bag of Tom's prescription kidney diet. Or: advice on food for an overweight dog."><label for="s-food"><svg class="icon" aria-hidden="true"><use href="#i-bone"></use></svg>Diet or pet food<small>Prescription diets &amp; food</small></label></div>
-                <div class="choice"><input type="radio" id="s-other" name="service" value="Something else" data-placeholder="Tell us a little about what you need and we'll point you in the right direction."><label for="s-other"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg>Something else<small>Not sure? Just ask</small></label></div>
-              </div>
-            </fieldset>
-
-            <fieldset class="form-step">
-              <legend><span class="form-step__num" aria-hidden="true">2</span>About your pet</legend>
-              <div class="form__row">
-                <div class="field">
-                  <label for="r-pet">Pet's name</label>
-                  <input id="r-pet" name="pet_name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="r-species">Type of animal</label>
-                  <select id="r-species" name="species" required>
-                    <option value="" disabled selected>Choose…</option>
-                    <option>Dog</option>
-                    <option>Cat</option>
-                    <option>Rabbit</option>
-                    <option>Other small pet</option>
-                    <option>Horse</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="field">
-                  <label for="r-age">Age <span class="opt">(optional)</span></label>
-                  <input id="r-age" name="pet_age" type="text" placeholder="e.g. 3 years, 10 weeks">
-                </div>
-                <div class="field">
-                  <label for="r-breed">Breed <span class="opt">(optional)</span></label>
-                  <input id="r-breed" name="breed" type="text">
-                </div>
-              </div>
-              <div class="field">
-                <label for="r-details">Tell us more</label>
-                <textarea id="r-details" name="details" required aria-describedby="r-details-hint" placeholder="Choose a service above and we'll suggest what's useful to tell us."></textarea>
-                <p class="field__hint" id="r-details-hint">Symptoms, how long it's been going on, medication names, or anything else that helps us prepare.</p>
-              </div>
-            </fieldset>
-
-            <fieldset class="form-step">
-              <legend><span class="form-step__num" aria-hidden="true">3</span>Your details</legend>
-              <div class="form__row">
-                <div class="field">
-                  <label for="r-first">First name</label>
-                  <input id="r-first" name="first_name" type="text" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="r-last">Last name</label>
-                  <input id="r-last" name="last_name" type="text" autocomplete="family-name" required>
-                </div>
-              </div>
-              <div class="form__row">
-                <div class="field">
-                  <label for="r-phone">Phone number</label>
-                  <input id="r-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="r-phone-hint">
-                  <p class="field__hint" id="r-phone-hint">We'll call this number to arrange your appointment.</p>
-                </div>
-                <div class="field">
-                  <label for="r-email">Email</label>
-                  <input id="r-email" name="email" type="email" autocomplete="email" required>
-                </div>
-              </div>
-              <fieldset class="pill-group">
-                <legend>Have you been to us before?</legend>
-                <div class="pill"><input type="radio" id="r-client-yes" name="existing_client" value="Yes, existing client" checked><label for="r-client-yes">Yes</label></div>
-                <div class="pill"><input type="radio" id="r-client-no" name="existing_client" value="No, new client"><label for="r-client-no">No, we're new</label></div>
-              </fieldset>
-              <fieldset class="pill-group">
-                <legend>When suits you best? <span class="opt">(tick any)</span></legend>
-                <div class="pill"><input type="checkbox" id="r-t-am" name="preferred_time" value="Weekday morning"><label for="r-t-am">Weekday morning</label></div>
-                <div class="pill"><input type="checkbox" id="r-t-pm" name="preferred_time" value="Weekday afternoon"><label for="r-t-pm">Weekday afternoon</label></div>
-                <div class="pill"><input type="checkbox" id="r-t-sat" name="preferred_time" value="Saturday morning"><label for="r-t-sat">Saturday morning</label></div>
-                <div class="pill"><input type="checkbox" id="r-t-any" name="preferred_time" value="Any time"><label for="r-t-any">Any time</label></div>
-              </fieldset>
-            </fieldset>
-
-            <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-            <div class="form__status" role="status" aria-live="polite"></div>
-            <div><button class="btn btn--lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>Send request</button></div>
-            <p class="form__note">This is a request, not a confirmed booking. We'll phone you to agree a time. For emergencies, please call 022 21258 straight away.</p>
-          </form>
+          <h2 class="request-aside__title">Call to book</h2>
+          <p>Give us a ring during opening hours and we'll book you in. We can arrange:</p>
+          <ul class="request-steps request-steps--plain">
+            <li>Consultations for illness, injury or a check-up</li>
+            <li>Puppy, kitten and booster vaccinations</li>
+            <li>Neutering and planned surgery</li>
+            <li>Post-op checks after surgery</li>
+            <li>Repeat prescriptions (subject to vet approval)</li>
+            <li>Prescription diets and pet food</li>
+          </ul>
+          <p class="muted">It helps to have your pet's name, age and a short description of what they need when you call.</p>
+          <div><a class="btn btn--lg" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>Call 022 21258</a></div>
         </div>
 
-        <aside class="request-aside" aria-label="Before you send">
+        <aside class="request-aside" aria-label="Before you call">
           <div class="info-card request-alert reveal">
             <div class="info-row">
               <span class="info-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
-              <div><h3>Emergency?</h3><p>Don't use the form. Call us straight away on <a href="tel:+3532221258">022 21258</a>, 24/7.</p></div>
+              <div><h3>Emergency?</h3><p>Call us straight away on <a href="tel:+3532221258">022 21258</a>, 24/7.</p></div>
             </div>
           </div>
 
           <div class="info-card reveal" data-delay="1">
-            <h3 class="request-aside__title">What happens next</h3>
-            <ol class="request-steps">
-              <li>We read your request during opening hours.</li>
-              <li>We phone you to agree a day and time.</li>
-              <li>Repeat prescriptions and food orders are prepared for collection, subject to vet approval and stock.</li>
-            </ol>
-          </div>
-
-          <div class="info-card reveal" data-delay="2">
             <span class="open-status" data-open-status>Opening hours</span>
             <table class="hours">
               <tr data-days="1,2,3,4,5"><th scope="row">Monday – Friday</th><td>9am – 6pm</td></tr>
@@ -199,7 +104,7 @@
             </table>
           </div>
 
-          <div class="info-card reveal" data-delay="3">
+          <div class="info-card reveal" data-delay="2">
             <div class="info-row">
               <span class="info-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-milk"></use></svg></span>
               <div><h3>Farm visits &amp; TB testing</h3><p>Please phone the practice to arrange farm calls, herd health work and TB testing.</p></div>
@@ -221,7 +126,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About &amp; Team</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="book.html">Request an appointment</a></li>
+            <li><a href="book.html">Book an appointment</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -251,7 +156,7 @@
 
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn btn--navy" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>Call us</a>
-    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
+    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book a visit</a>
   </div>
 </body>
 </html>

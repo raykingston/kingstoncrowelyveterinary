@@ -119,7 +119,7 @@
     }, 250);
   }
 
-  /* ---------------- Forms: contact + appointment request ----------------
+  /* ---------------- Contact form ----------------
      Sends the form as JSON to the URL in its action attribute. Works with FormSubmit
      (https://formsubmit.co/ajax/<email>) and Formspree (https://formspree.io/f/<id>).
      Optional attributes on the <form>:
@@ -129,21 +129,6 @@
     var status = form.querySelector('.form__status');
     var show = function (type, msg) { status.className = 'form__status is-visible is-' + type; status.textContent = msg; };
     var defaultSuccess = 'Thank you! Your message has been sent. We will get back to you as soon as we can.';
-
-    // Appointment request: pre-select a service from ?service=... and tailor the description prompt.
-    var details = form.querySelector('textarea');
-    var basePlaceholder = details ? details.placeholder : '';
-    var services = form.querySelectorAll('input[name="service"]');
-    var updatePlaceholder = function () {
-      var picked = form.querySelector('input[name="service"]:checked');
-      if (picked && details && picked.getAttribute('data-placeholder')) details.placeholder = picked.getAttribute('data-placeholder');
-    };
-    services.forEach(function (r) { r.addEventListener('change', updatePlaceholder); });
-    var wanted = (new URLSearchParams(location.search).get('service') || '').toLowerCase();
-    if (wanted) {
-      services.forEach(function (r) { if (r.id === 's-' + wanted) r.checked = true; });
-      updatePlaceholder();
-    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -177,7 +162,6 @@
             throw new Error(res.body.message || ('HTTP error'));
           }
           form.reset();
-          if (details) details.placeholder = basePlaceholder;
           show('success', form.getAttribute('data-success') || defaultSuccess);
           status.scrollIntoView({ block: 'center', behavior: 'smooth' });
         })

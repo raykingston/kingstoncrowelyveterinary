@@ -74,7 +74,7 @@
         </ul>
         <div class="nav__cta">
           <a class="btn btn--ghost btn--sm" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
-          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
+          <a class="btn btn--sm" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book a visit</a>
         </div>
       </nav>
     </div>
@@ -90,13 +90,13 @@
             <span class="emergency__icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></span>
             <div>
               <h2 style="font-size:clamp(1.4rem,2.6vw,1.9rem)">Is it an emergency?</h2>
-              <p>Please don't use the form. Call us now: we're available 24/7 for emergencies.</p>
+              <p>Call us now: we're available 24/7 for emergencies.</p>
             </div>
           </div>
           <a class="btn btn--lg" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>022 21258</a>
         </div>
 
-        <div class="visit-grid">
+        <div class="visit-grid visit-grid--single">
           <div class="info-card reveal">
             <span class="open-status" data-open-status>Opening hours</span>
             <div class="info-row">
@@ -125,12 +125,14 @@
             </div>
           </div>
 
-          <div class="info-card reveal" data-delay="1">
+          <!-- CONTACT FORM: hidden for now (the practice prefers phone calls).
+               To turn it back on: remove the "hidden" attribute below, and remove "visit-grid--single" from the div above. -->
+          <div class="info-card reveal" data-delay="1" hidden>
             <h2 style="font-size:clamp(1.6rem,2.6vw,2rem)">Send us a message</h2>
-            <p class="muted">For general enquiries, use this form to reach us by email and we'll get back to you as soon as we can. To arrange an appointment, call us or <a href="book.html">send an appointment request</a>.</p>
+            <p class="muted">For general enquiries, use this form to reach us by email and we'll get back to you as soon as we can. To arrange an appointment, please <a href="tel:+3532221258">call us on 022 21258</a>.</p>
             <!-- Messages are emailed via FormSubmit (https://formsubmit.co). To send them to a different inbox,
                  change the email address at the end of the action URL below (see site/README.md). -->
-            <form class="form" action="https://formsubmit.co/ajax/raykingston@hotmail.com" method="POST" data-contact-form
+            <form class="form" action="https://formsubmit.co/ajax/kingstoncrowleyveterinary@gmail.com" method="POST" data-contact-form
                   data-subject="Website enquiry: {topic} from {name}">
               <div class="form__row">
                 <div class="field">
@@ -200,7 +202,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About &amp; Team</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="book.html">Request an appointment</a></li>
+            <li><a href="book.html">Book an appointment</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -230,7 +232,7 @@
 
   <div class="mobile-bar" aria-label="Quick actions">
     <a class="btn btn--navy" href="tel:+3532221258"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>Call us</a>
-    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Request a visit</a>
+    <a class="btn" href="book.html"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Book a visit</a>
   </div>
 </body>
 </html>

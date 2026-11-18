@@ -76,7 +76,7 @@
           <!-- Requests are emailed via FormSubmit (https://formsubmit.co). To send them to a different inbox,
                change the email address at the end of the action URL below (see site/README.md). -->
           <form class="form" action="https://formsubmit.co/ajax/raykingston@hotmail.com" method="POST" data-contact-form
-                data-subject="Appointment request: {service} for {pet_name}"
+                data-subject="Request appointment - {service} - {first_name} {last_name}"
                 data-success="Thank you! We've received your request and will phone you to arrange a time, usually within one working day.">
 
             <fieldset class="form-step">
@@ -133,18 +133,24 @@
               <legend><span class="form-step__num" aria-hidden="true">3</span>Your details</legend>
               <div class="form__row">
                 <div class="field">
-                  <label for="r-name">Your name</label>
-                  <input id="r-name" name="name" type="text" autocomplete="name" required>
+                  <label for="r-first">First name</label>
+                  <input id="r-first" name="first_name" type="text" autocomplete="given-name" required>
                 </div>
+                <div class="field">
+                  <label for="r-last">Last name</label>
+                  <input id="r-last" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="form__row">
                 <div class="field">
                   <label for="r-phone">Phone number</label>
                   <input id="r-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="r-phone-hint">
                   <p class="field__hint" id="r-phone-hint">We'll call this number to arrange your appointment.</p>
                 </div>
-              </div>
-              <div class="field">
-                <label for="r-email">Email</label>
-                <input id="r-email" name="email" type="email" autocomplete="email" required>
+                <div class="field">
+                  <label for="r-email">Email</label>
+                  <input id="r-email" name="email" type="email" autocomplete="email" required>
+                </div>
               </div>
               <fieldset class="pill-group">
                 <legend>Have you been to us before?</legend>

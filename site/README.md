@@ -58,7 +58,7 @@ book.html     ->  action="https://formsubmit.co/ajax/raykingston@hotmail.com"
    in both `action` URLs with that string so the address isn't visible in the page source.
 3. **Change the inbox later** (e.g. to the practice email): put the new address in both `action` URLs, push, and activate again.
 
-Emails arrive as a table with a subject like "Appointment request: Vaccination for Bella"; replying goes straight to the owner.
+Emails arrive as a table with a subject like "Request appointment - Vaccination - Mary Murphy" (set by `data-subject` on the form); replying goes straight to the owner.
 *Formspree also works: use `https://formspree.io/f/<id>` as the action instead.*
 
 ## Outstanding content

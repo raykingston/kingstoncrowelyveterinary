@@ -354,8 +354,8 @@ button.team-card, a.team-card { cursor: pointer; }
 .info-row__icon { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--green-50); color: var(--green); }
 .info-row h3 { font-family: var(--font-body); font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 .3em; }
 .info-row p, .info-row address { margin: 0; font-style: normal; font-size: 1.05rem; }
-.info-row a { color: var(--navy); font-weight: 600; text-decoration: none; }
-.info-row a:hover { color: var(--green); }
+.info-row a:not(.btn) { color: var(--navy); font-weight: 600; text-decoration: none; }
+.info-row a:not(.btn):hover { color: var(--green); }
 
 .hours { width: 100%; border-collapse: collapse; font-size: 1rem; }
 .hours th, .hours td { padding: .7em 0; border-bottom: 1px dashed var(--line); text-align: left; vertical-align: top; }

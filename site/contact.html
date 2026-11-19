@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact & Opening Hours | Kingston Crowley Veterinary, Mallow</title>
-  <meta name="description" content="Find Kingston Crowley Veterinary at 15 Beecher St, Mallow, Co. Cork. Call 022 21258. Opening hours, map and contact form.">
+  <title>Contact Your Vet in Mallow | Kingston Crowley Veterinary</title>
+  <meta name="description" content="Find Kingston Crowley Veterinary at 15 Beecher St, Mallow, Co. Cork. Call 022 21258. Opening hours, directions and 24/7 emergency vet number.">
   <meta name="theme-color" content="#14284b">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Kingston Crowley Veterinary">
-  <meta property="og:title" content="Contact & Opening Hours | Kingston Crowley Veterinary, Mallow">
-  <meta property="og:description" content="Find Kingston Crowley Veterinary at 15 Beecher St, Mallow, Co. Cork. Call 022 21258. Opening hours, map and contact form.">
-  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta property="og:title" content="Contact Your Vet in Mallow | Kingston Crowley Veterinary">
+  <meta property="og:description" content="Find Kingston Crowley Veterinary at 15 Beecher St, Mallow, Co. Cork. Call 022 21258. Opening hours, directions and 24/7 emergency vet number.">
+  <meta property="og:image" content="https://www.kingstoncrowleyveterinary.ie/site/assets/img/hero.jpg">
+  <meta property="og:url" content="https://www.kingstoncrowleyveterinary.ie/site/contact.html">
+  <meta property="og:locale" content="en_IE">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.kingstoncrowleyveterinary.ie/site/contact.html">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,14 +27,17 @@
     "@context": "https://schema.org",
     "@type": "VeterinaryCare",
     "name": "Kingston Crowley Veterinary",
-    "image": "assets/img/building.jpg",
-    "logo": "assets/img/logo-emblem.jpg",
+    "@id": "https://www.kingstoncrowleyveterinary.ie/#practice",
+    "url": "https://www.kingstoncrowleyveterinary.ie/",
+    "image": "https://www.kingstoncrowleyveterinary.ie/site/assets/img/building.jpg",
+    "logo": "https://www.kingstoncrowleyveterinary.ie/site/assets/img/logo-emblem.jpg",
     "telephone": "+353 22 21258",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "15 Beecher St, Lackanalooha",
       "addressLocality": "Mallow",
       "addressRegion": "Co. Cork",
+      "postalCode": "P51 EY63",
       "addressCountry": "IE"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 52.1415852, "longitude": -8.6510727 },
@@ -38,7 +45,8 @@
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
     ],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3" }
+    "areaServed": ["Mallow", "North Cork", "County Cork"],
+    "description": "Mixed veterinary practice in Mallow, Co. Cork: companion animals, farm animals and 24/7 emergency care."
   }
   </script>
 </head>
@@ -103,9 +111,12 @@
               <span class="info-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></span>
               <div>
                 <h3>Visit us</h3>
-                <address>15 Beecher St, Lackanalooha,<br>Mallow, Co. Cork</address>
+                <address>15 Beecher St, Lackanalooha,<br>Mallow, Co. Cork, P51 EY63</address>
                 <p class="muted" style="font-size:.95rem;margin-top:.4em">Just off Main Street, easy to reach by car or on foot.</p>
-                <a class="link-arrow" style="margin-top:.5em" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.1415852,-8.6510727" target="_blank" rel="noopener">Get directions <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+                <div class="btn-row" style="margin-top:.9em">
+                  <a class="btn btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Kingston+Crowley+Veterinary%2C+15+Beecher+St%2C+Mallow%2C+Co.+Cork+P51+EY63" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>Open in Google Maps</a>
+                  <a class="btn btn--sm btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.1415852,-8.6510727" target="_blank" rel="noopener">Get directions <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+                </div>
               </div>
             </div>
             <div class="info-row">
@@ -121,6 +132,19 @@
                   <tr data-days="6"><th scope="row">Saturday</th><td>9am – 1pm</td></tr>
                   <tr class="is-emergency" data-days="0"><th scope="row">Out of hours</th><td>24/7 for emergencies only</td></tr>
                 </table>
+              </div>
+            </div>
+            <!-- GOOGLE REVIEWS: "Leave us a review" opens the Google listing for now. Once you have the Place ID (starts ChIJ...), change its href to
+                 https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID to open the review box directly (also in contact.html / index.html). -->
+            <div class="info-row">
+              <span class="info-row__icon"><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg></span>
+              <div>
+                <h3>Reviews</h3>
+                <p style="margin:0">Happy with your visit? A Google review helps other pet owners and farmers in Mallow find us.</p>
+                <div class="btn-row" style="margin-top:.9em">
+                  <a class="btn btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Kingston+Crowley+Veterinary%2C+15+Beecher+St%2C+Mallow%2C+Co.+Cork+P51+EY63" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg>Leave us a review</a>
+                  <a class="btn btn--sm btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Kingston+Crowley+Veterinary%2C+15+Beecher+St%2C+Mallow%2C+Co.+Cork+P51+EY63" target="_blank" rel="noopener">See all reviews <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+                </div>
               </div>
             </div>
           </div>
@@ -179,6 +203,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">Find us</span>
           <h2>15 Beecher Street, Mallow</h2>
+          <p>Eircode: P51 EY63</p>
         </div>
         <div class="visit-grid">
           <div class="split__media reveal">
@@ -187,6 +212,9 @@
           <div class="map reveal" data-delay="1">
             <iframe title="Map showing Kingston Crowley Veterinary, 15 Beecher St, Mallow" src="https://maps.google.com/maps?q=52.1415852,-8.6510727&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
+        </div>
+        <div class="btn-row mt-lg reveal" style="justify-content:center">
+          <a class="btn btn--lg" href="https://www.google.com/maps/search/?api=1&amp;query=Kingston+Crowley+Veterinary%2C+15+Beecher+St%2C+Mallow%2C+Co.+Cork+P51+EY63" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>Open in Google Maps</a>
         </div>
       </div>
     </section>
@@ -209,7 +237,7 @@
         <div>
           <h3>Contact</h3>
           <ul class="footer-list">
-            <li style="display:flex"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg><span>15 Beecher St, Lackanalooha,<br>Mallow, Co. Cork</span></li>
+            <li style="display:flex"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg><span>15 Beecher St, Lackanalooha,<br>Mallow, Co. Cork, P51 EY63</span></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg><a href="tel:+3532221258">022 21258</a></li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg>24/7 for emergencies</li>
           </ul>

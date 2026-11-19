@@ -26,6 +26,7 @@ Then point your domain's DNS at the host.
 ## Files
 ```
 ../index.html   Home (lives in the project root, links into site/)
+../robots.txt, ../sitemap.xml   For Google (project root). Add new pages to sitemap.xml
 about.html      About + team (bios are the <dialog> blocks at the bottom)
 services.html   Services
 contact.html    Contact details, map (contact form currently hidden)
@@ -34,6 +35,9 @@ assets/css/styles.css   All styling (brand colours are at the top in :root)
 assets/js/main.js       Menu, animations, bio pop-ups, open/closed status, form, icons
 assets/img/             Logos, photos, favicon
 ```
+
+## Search (SEO)
+The live address is https://www.kingstoncrowleyveterinary.ie/. Each page's `<title>`, description and `canonical` link use it, and so do the business details (`application/ld+json`) in `index.html` and `contact.html`. If the address ever changes, search and replace it across the HTML files, `robots.txt` and `sitemap.xml`.
 
 ## Common edits
 - **Phone, address or hours:** these appear in the header, footer and contact sections of every page, so search and replace across all 5 HTML files.
@@ -61,5 +65,5 @@ Emails arrive as a table (subject set by `data-subject` on the form); replying g
 *Formspree also works: use `https://formspree.io/f/<id>` as the action instead.*
 
 ## Outstanding content
-- Eircode (optional).
+- Google Place ID for the "Leave us a review" buttons (`index.html`, `contact.html`); see the comment above each button.
 - Online booking may move to the Petstoria booking system in future.

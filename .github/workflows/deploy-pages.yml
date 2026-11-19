@@ -24,11 +24,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      # Publish only the website: index.html (root) + site/ — never Requirements/.
+      # Publish only the website: index.html, robots.txt, sitemap.xml (root) + site/ — never Requirements/.
       - name: Stage website files
         run: |
           mkdir -p _public
-          cp index.html _public/
+          cp index.html robots.txt sitemap.xml _public/
           cp -r site _public/site
           rm -f _public/site/README.md
       - uses: actions/upload-pages-artifact@v3

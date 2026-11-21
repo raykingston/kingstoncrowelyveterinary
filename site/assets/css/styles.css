@@ -514,3 +514,12 @@ button.team-card, a.team-card { cursor: pointer; }
 .request-steps--plain { margin: 0 0 1.2em; gap: 10px; }
 .request-steps--plain li { padding-left: 28px; color: var(--ink); }
 .request-steps--plain li::before { content: ""; top: .45em; left: 6px; width: 10px; height: 10px; background: var(--green); }
+
+/* ---------- FAQ (emergency page) ---------- */
+.faq { display: grid; gap: 12px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 0 22px; box-shadow: var(--shadow-sm); }
+.faq summary { cursor: pointer; padding: 18px 0; font-weight: 600; color: var(--navy); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--green); flex: none; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 18px; color: var(--muted); }

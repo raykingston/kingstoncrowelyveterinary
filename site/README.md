@@ -29,6 +29,7 @@ Then point your domain's DNS at the host.
 ../robots.txt, ../sitemap.xml   For Google (project root). Add new pages to sitemap.xml
 about.html      About + team (bios are the <dialog> blocks at the bottom)
 services.html   Services
+emergency-vet-mallow.html   Emergency vet page (aimed at "emergency vet Mallow" searches)
 contact.html    Contact details, map (contact form currently hidden)
 book.html       How to book (by phone only; no form)
 assets/css/styles.css   All styling (brand colours are at the top in :root)
@@ -40,7 +41,7 @@ assets/img/             Logos, photos, favicon
 The live address is https://www.kingstoncrowleyveterinary.ie/. Each page's `<title>`, description and `canonical` link use it, and so do the business details (`application/ld+json`) in `index.html` and `contact.html`. If the address ever changes, search and replace it across the HTML files, `robots.txt` and `sitemap.xml`.
 
 ## Common edits
-- **Phone, address or hours:** these appear in the header, footer and contact sections of every page, so search and replace across all 5 HTML files.
+- **Phone, address or hours:** these appear in the header, footer and contact sections of every page, so search and replace across all 6 HTML files.
   The live "Open now / Closed" badge reads its times from `HOURS` in `assets/js/main.js`.
 - **Team member:** copy an existing `team-card` button and its matching `<dialog id="bio-…">` in `about.html`, and add the photo to `assets/img/`.
 - **Appointments:** the practice books by phone only (022 21258). `book.html` explains this and has a call button; there is deliberately no online request form.

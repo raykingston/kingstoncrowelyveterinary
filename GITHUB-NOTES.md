@@ -3,7 +3,7 @@
 Notes on how this folder is connected to GitHub, and how to send changes up.
 
 - **Local folder:** `C:\Users\rk102472\Documents\GitHub\kcmallow-vets`
-- **GitHub repo:** https://github.com/raykingston/kingstoncrowelyveterinary
+- **GitHub repo:** https://github.com/raykingston/kingstoncrowleyveterinary
 - **GitHub account:** `raykingston` (personal, raykingston@hotmail.com), not the work account
 
 ## Everyday routine
@@ -38,7 +38,7 @@ These only need repeating if the folder is ever re-created from scratch.
 
 1. **Linked the folder to GitHub:**
    ```
-   git remote add origin https://github.com/raykingston/kingstoncrowelyveterinary.git
+   git remote add origin https://github.com/raykingston/kingstoncrowleyveterinary.git
    git fetch origin
    ```
 2. **Placed local work on top of the files already uploaded via the website**, so nothing on GitHub was overwritten:
@@ -53,7 +53,7 @@ These only need repeating if the folder is ever re-created from scratch.
    ```
 4. **Kept the personal and work GitHub logins separate.** Putting the username in the repo address makes Windows store a separate login for it:
    ```
-   git remote set-url origin https://raykingston@github.com/raykingston/kingstoncrowelyveterinary.git
+   git remote set-url origin https://raykingston@github.com/raykingston/kingstoncrowleyveterinary.git
    ```
    The first `git push` opened a browser to sign in. Sign in as **raykingston** (sign out of the work account in that browser first if needed). After that it's remembered.
 
